@@ -13,11 +13,6 @@ const { constellations, stars } = require('./datasets/astronomy');
 const { weapons, characters } = require('./datasets/ultima');
 const { dinosaurs, humans, movies } = require('./datasets/dinosaurs');
 
-
-
-
-
-
 // SINGLE DATASETS
 // =================================================================
 
@@ -27,11 +22,18 @@ const kittyPrompts = {
 
     // Return an array of just the names of kitties who are orange e.g.
     // ['Tiger', 'Snickers']
-    const result = 'REPLACE WITH YOUR RESULT HERE';
+    const result = kitties.filter(kitty => kitty.color === 'orange')
+      .map(orangeKitty => orangeKitty.name;
     return result;
 
     // Annotation:
     // Write your annotation here as a comment
+    /*
+    getting an array of objects w/ name, age, color properties
+    want to get back an array of only the orange kitties names
+    filter to get back orange cats in a subset of the original data
+    use a map to map over filtered kitties and only return the names
+    */
   },
 
   sortByAge() {

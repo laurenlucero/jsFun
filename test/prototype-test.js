@@ -24,7 +24,7 @@ describe("PROTOTYPES", () => {
       const e = kittyPrompts.orangeKittyNames();
       expect(e).to.deep.equal(["Tiger", "Snickers"]);
     }),
-      it.only("sortByAge", () => {
+      it("sortByAge", () => {
         const e = kittyPrompts.sortByAge();
         expect(e).to.deep.equal([
           {
@@ -49,7 +49,7 @@ describe("PROTOTYPES", () => {
           }
         ]);
       }),
-      it("growUp", () => {
+      it.only("growUp", () => {
         const e = kittyPrompts.growUp();
         expect(e).to.deep.equal([
           {

@@ -65,26 +65,28 @@ const kittyPrompts = {
     // },
     // ...etc]
 
-    const result = 'REPLACE WITH YOUR RESULT HERE';
-    return result;
+    const result = kitties.map(kitty => {
+      const grownKitties = {}
+      grownKitties.name = kitty.name;
+      grownKitties.age = kitty.age + 2;
+      grownKitties.color = kitty.color;
+      console.log(grownKitties);
+      return grownKitties;
+    })
+    return result.sort((a, b) => b.age - a.age);
   }
 };
 
-
-
-
-
+/*
+map over array of kitties
+add 2 to each age value
+*/
 
 // ---------------------------------------------------------------------------
 // ---------------------------------------------------------------------------
 // ---------------------------------------------------------------------------
 // ---------------------------------------------------------------------------
 // ---------------------------------------------------------------------------
-
-
-
-
-
 
 // DATASET: clubs from ./datasets/clubs
 const clubPrompts = {

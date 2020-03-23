@@ -49,7 +49,7 @@ describe("PROTOTYPES", () => {
           }
         ]);
       }),
-      it.only("growUp", () => {
+      it("growUp", () => {
         const e = kittyPrompts.growUp();
         expect(e).to.deep.equal([
           {
@@ -104,7 +104,7 @@ describe("PROTOTYPES", () => {
       });
     }),
     describe("Mod Prompts", () => {
-      it("studentsPerMod", () => {
+      it.only("studentsPerMod", () => {
         const e = modPrompts.studentsPerMod();
         expect(e).to.deep.equal([
           {

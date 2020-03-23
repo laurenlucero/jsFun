@@ -28,10 +28,10 @@ const kittyPrompts = {
     // Annotation:
     // Write your annotation here as a comment
     /*
-    getting an array of objects w/ name, age, color properties
-    want to get back an array of only the orange kitties names
-    filter to get back orange cats in a subset of the original data
-    use a map to map over filtered kitties and only return the names
+  getting an array of objects w/ name, age, color properties
+  want to get back an array of only the orange kitties names
+  filter to get back orange cats in a subset of the original data
+  use a map to map over filtered kitties and only return the names
     */
   },
 
@@ -45,9 +45,9 @@ const kittyPrompts = {
     // Annotation:
     // Write your annotation here as a comment
     /*
-    use sort method to sort array in descending order
-    parameters a and b represent 2 objects contained in the array
-    use dot notation to target the age property
+  use sort method to sort array in descending order
+  parameters a and b represent 2 objects contained in the array
+  use dot notation to target the age property
     */
   },
 
@@ -70,7 +70,6 @@ const kittyPrompts = {
       grownKitties.name = kitty.name;
       grownKitties.age = kitty.age + 2;
       grownKitties.color = kitty.color;
-      console.log(grownKitties);
       return grownKitties;
     })
     return result.sort((a, b) => b.age - a.age);
@@ -79,7 +78,11 @@ const kittyPrompts = {
 
 /*
 map over array of kitties
+make new object
+assign same name and color
 add 2 to each age value
+return new object
+sort result from oldest to youngest
 */
 
 // ---------------------------------------------------------------------------
@@ -99,29 +102,24 @@ const clubPrompts = {
     //   ...etc
     // }
 
-    const result = 'REPLACE WITH YOUR RESULT HERE';
+    const result = ''
+    console.log(result)
     return result;
 
     // Annotation:
     // Write your annotation here as a comment
+    /*
+  Access clubs members and put into an array
+  Remove any duplicates
+    */
   }
 };
 
-
-
-
-
-
 // ---------------------------------------------------------------------------
 // ---------------------------------------------------------------------------
 // ---------------------------------------------------------------------------
 // ---------------------------------------------------------------------------
 // ---------------------------------------------------------------------------
-
-
-
-
-
 
 // DATASET: mods from ./datasets/mods
 const modPrompts = {
@@ -135,11 +133,23 @@ const modPrompts = {
     //   { mod: 4, studentsPerInstructor: 8 }
     // ]
 
-    const result = 'REPLACE WITH YOUR RESULT HERE';
+    const result = mods.map(mod => {
+      let studentsPerMod = {};
+      let studentsPerInstructor = mod.students / mod.instructors;
+      studentsPerMod.mod = mod.mod,
+      studentsPerMod.studentsPerInstructor = studentsPerInstructor
+      return studentsPerMod
+    })
     return result;
 
     // Annotation:
     // Write your annotation here as a comment
+    /*
+  Map over the mods arrays
+  Divide students by instructors
+  Return new object with two properties,
+  mod and students per instructor
+    */
   }
 };
 

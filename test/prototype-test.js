@@ -104,7 +104,7 @@ describe("PROTOTYPES", () => {
       });
     }),
     describe("Mod Prompts", () => {
-      it.only("studentsPerMod", () => {
+      it("studentsPerMod", () => {
         const e = modPrompts.studentsPerMod();
         expect(e).to.deep.equal([
           {
@@ -127,7 +127,7 @@ describe("PROTOTYPES", () => {
       });
     }),
     describe("Cake Prompts", () => {
-      it("stockPerCake", () => {
+      it.only("stockPerCake", () => {
         const e = cakePrompts.stockPerCake();
         expect(e).to.deep.equal([
           {

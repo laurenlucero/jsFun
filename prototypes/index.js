@@ -153,21 +153,11 @@ const modPrompts = {
   }
 };
 
-
-
-
-
-
 // ---------------------------------------------------------------------------
 // ---------------------------------------------------------------------------
 // ---------------------------------------------------------------------------
 // ---------------------------------------------------------------------------
 // ---------------------------------------------------------------------------
-
-
-
-
-
 
 // DATASET: cakes from ./datasets/cakes
 const cakePrompts = {
@@ -180,11 +170,21 @@ const cakePrompts = {
     //    ..etc
     // ]
 
-    const result = 'REPLACE WITH YOUR RESULT HERE';
+    const result = cakes.map(cake => {
+      let stockPerCake = {}
+      stockPerCake.flavor = cake.cakeFlavor,
+      stockPerCake.inStock = cake.inStock
+      return stockPerCake
+    });
     return result;
 
     // Annotation:
     // Write your annotation here as a comment
+    /*
+  map over cakes arrays
+  return new array of objects with two keys,
+  flavor and inStock
+    */
   },
 
   onlyInStock() {

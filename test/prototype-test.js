@@ -156,7 +156,7 @@ describe("PROTOTYPES", () => {
           }
         ]);
       }),
-        it.only("onlyInStock", () => {
+        it("onlyInStock", () => {
           const e = cakePrompts.onlyInStock();
           expect(e).to.deep.equal([
             {
@@ -193,7 +193,7 @@ describe("PROTOTYPES", () => {
             }
           ]);
         }),
-        it("totalInventory", () => {
+        it.only("totalInventory", () => {
           const e = cakePrompts.totalInventory();
           expect(e).to.deep.equal(59);
         }),

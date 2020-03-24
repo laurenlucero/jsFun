@@ -66,12 +66,12 @@ const kittyPrompts = {
     // ...etc]
 
     const result = kitties.map(kitty => {
-      const grownKitties = {}
+      const grownKitties = {};
       grownKitties.name = kitty.name;
       grownKitties.age = kitty.age + 2;
       grownKitties.color = kitty.color;
       return grownKitties;
-    })
+    });
     return result.sort((a, b) => b.age - a.age);
   }
 };
@@ -102,8 +102,7 @@ const clubPrompts = {
     //   ...etc
     // }
 
-    const result = ''
-    console.log(result)
+    const result = '';
     return result;
 
     // Annotation:
@@ -137,9 +136,9 @@ const modPrompts = {
       let studentsPerMod = {};
       let studentsPerInstructor = mod.students / mod.instructors;
       studentsPerMod.mod = mod.mod,
-      studentsPerMod.studentsPerInstructor = studentsPerInstructor
-      return studentsPerMod
-    })
+      studentsPerMod.studentsPerInstructor = studentsPerInstructor;
+      return studentsPerMod;
+    });
     return result;
 
     // Annotation:
@@ -171,10 +170,10 @@ const cakePrompts = {
     // ]
 
     const result = cakes.map(cake => {
-      let stockPerCake = {}
+      let stockPerCake = {};
       stockPerCake.flavor = cake.cakeFlavor,
-      stockPerCake.inStock = cake.inStock
-      return stockPerCake
+      stockPerCake.inStock = cake.inStock;
+      return stockPerCake;
     });
     return result;
 
@@ -208,11 +207,15 @@ const cakePrompts = {
     // ..etc
     // ]
 
-    const result = 'REPLACE WITH YOUR RESULT HERE';
+    const result = cakes.filter(cake => cake.inStock > 0);
     return result;
 
     // Annotation:
     // Write your annotation here as a comment
+    /*
+  filter through the cakes array
+  return subset of the original array that only includes cakes in stock
+    */
   },
 
   totalInventory() {

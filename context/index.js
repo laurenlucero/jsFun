@@ -14,12 +14,13 @@ const context = {
 
     const ship = new SpaceProbe("voyager", "classy");
 
-    // What is the value of `this` when we call ship.fly()?
-    const result = "REPLACE WITH YOUR RESULT HERE";
+    // What is the value of `this` when we call ship.fly
+    ship.fly()
+    const result = "global window object";
     return result;
 
     // Annotation:
-    // Write your annotation here as a comment
+    // Since the function is an arrow function this refers to the global window object
   },
 
   exerciseB() {

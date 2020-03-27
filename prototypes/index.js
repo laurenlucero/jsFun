@@ -240,11 +240,24 @@ const cakePrompts = {
     // every cake in the dataset e.g.
     // ['dutch process cocoa', 'toasted sugar', 'smoked sea salt', 'berries', ..etc]
 
-    const result = 'REPLACE WITH YOUR RESULT HERE';
+    const result = cakes.reduce((acc, cake) => {
+      cake.toppings.forEach(topping => {
+        if (!acc.includes(topping))
+          acc.push(topping)
+      })
+      return acc;
+    }, []);
+    console.log('result', result);
     return result;
 
     // Annotation:
     // Write your annotation here as a comment
+    /*
+  Reduce elements of the nested arrays
+  Combine into a final array without duplicates
+  Check if final array contains item, if not,
+  push into final array
+    */
   },
 
   groceryList() {

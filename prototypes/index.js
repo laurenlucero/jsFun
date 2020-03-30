@@ -271,11 +271,26 @@ const cakePrompts = {
     //    ...etc
     // }
 
-    const result = 'REPLACE WITH YOUR RESULT HERE';
+    const result = cakes.reduce((acc, cake) => {
+      cake.toppings.forEach(topping => {
+        if (!acc[topping]) {
+          acc[topping] = 0
+        }
+        acc[topping]++
+      });
+      return acc;
+    }, {});
+
     return result;
 
     // Annotation:
     // Write your annotation here as a comment
+    /*
+    Iterate through all of the toppings,
+    assign each topping to be a key in a new object
+    Count how many times each topping is used,
+    assign number to the value in new object
+    */
   }
 };
 

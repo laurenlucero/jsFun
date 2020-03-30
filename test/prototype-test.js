@@ -210,7 +210,7 @@ describe("PROTOTYPES", () => {
             "crystallized ginger"
           ]);
         }),
-        it("groceryList", () => {
+        it.only("groceryList", () => {
           const e = cakePrompts.groceryList();
           expect(e).to.deep.equal({
             "dutch process cocoa": 1,

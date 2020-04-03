@@ -1,3 +1,5 @@
+/* eslint-disable */
+
 const { kitties } = require('./datasets/kitties');
 const { clubs } = require('./datasets/clubs');
 const { mods } = require('./datasets/mods');
@@ -321,11 +323,13 @@ const classPrompts = {
     //   { roomLetter: 'G', program: 'FE', capacity: 29 }
     // ]
 
-    const result = 'REPLACE WITH YOUR RESULT HERE';
+    const result = classrooms.filter(program => program.program === 'FE');
     return result;
 
     // Annotation:
     // Write your annotation here as a comment
+    // iterate over classrooms filter out only the FE classes
+
   },
 
   totalCapacities() {
@@ -336,11 +340,23 @@ const classPrompts = {
     //   beCapacity: 96
     // }
 
-    const result = 'REPLACE WITH YOUR RESULT HERE';
+    const result = classrooms.reduce((acc, program) => {
+      if (program.program === 'FE') {
+        acc.feCapacity += program.capacity;
+      } else {
+        acc.beCapacity += program.capacity;
+      }
+      return acc;
+    }, {
+      feCapacity: 0,
+      beCapacity: 0
+    });
     return result;
 
     // Annotation:
     // Write your annotation here as a comment
+    // iterate over classrooms
+    // reduce into object with capacity key and total students value
   },
 
   sortByCapacity() {

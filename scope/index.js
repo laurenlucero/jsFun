@@ -27,7 +27,7 @@ const scope = {
     changePerson();
     // Log D: personC
 
-    const result = [{'A': 'Ben'}, {'B': 'CardiB'}, {'C': 'CardiB'}, {'D': 'Paul'}];
+    const result = [{A: 'Ben'}, {B: 'CardiB'}, {C: 'CardiB'}, {D: 'Paul'}];
     return result;
 
     // Annotation:
@@ -38,8 +38,7 @@ const scope = {
     // After log B, person C is assigned to person A (Paul)
     // Log D is Paul
 
-    }
-  },
+    },
 
   exerciseB() {
     let number = 30;
@@ -50,29 +49,28 @@ const scope = {
       if (number === 75) {
         let number = 28;
       }
-
       // Log A: number
 
       function newNumber() {
         number = 64;
-
         // Log B: number
       }
 
       newNumber();
-
       // Log C: number
     }
 
-    numberFunction();
-
+      numberFunction();
     // Log D: number
 
-    const result = [{'A': 75}, {'B': 64}, {'C': 64}, {'D': 30}];
+    const result = [{A: 75}, {B: 64}, {C: 64}, {D: 30}];
     return result;
 
     // Annotation:
-    // Write your annotation here as a comment
+    // Log A is 75 bc it is functionally scoped
+    // Log B is 64 bc it is functionally scoped
+    // Log C is 64 bc it is functionally scoped
+    // Log D is 30 bc it is in the global scope
   },
 
   exerciseC() {
@@ -84,29 +82,28 @@ const scope = {
       if (greeting === 'Yo') {
         let greeting = 'Howdy';
       }
-
       // Log A: greeting
 
       function newPhrase() {
         greeting = 'Hey';
-
         // Log B: greeting
       }
 
       newPhrase();
-
       // Log C: greeting
     }
 
     greetingFunction();
-
     // Log D: greeting
 
-    const result = 'REPLACE WITH YOUR RESULT HERE';
+    const result = [{A: "Yo"}, {B: "Hey"}, {C: "Hey"}, {D: "Hello"}];
     return result;
 
     // Annotation:
-    // Write your annotation here as a comment
+    // Log A is Yo because var leaks into the global scope
+    // Log B is Hey because newPhrase method is called and reassigns greeting to Hey
+    // Log C is still Hey
+    // Log D is Hello because it is globally scoped
   },
 
   exerciseD() {

@@ -210,7 +210,7 @@ describe("PROTOTYPES", () => {
             "crystallized ginger"
           ]);
         }),
-        it.only("groceryList", () => {
+        it("groceryList", () => {
           const e = cakePrompts.groceryList();
           expect(e).to.deep.equal({
             "dutch process cocoa": 1,
@@ -250,7 +250,7 @@ describe("PROTOTYPES", () => {
           }
         ]);
       }),
-        it("totalCapacities", () => {
+        it.only("totalCapacities", () => {
           const e = classPrompts.totalCapacities();
           expect(e).to.deep.equal({
             feCapacity: 110,

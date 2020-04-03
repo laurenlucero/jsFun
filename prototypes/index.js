@@ -28,8 +28,7 @@ const kittyPrompts = {
       .map(orangeKitty => orangeKitty.name);
     return result;
     // Annotation:
-    // Write your annotation here as a comment
-    /*
+      /*
   getting an array of objects w/ name, age, color properties
   want to get back an array of only the orange kitties names
   filter to get back orange cats in a subset of the original data
@@ -39,13 +38,11 @@ const kittyPrompts = {
 
   sortByAge() {
     // Sort the kitties by their age
-
     const result = kitties.sort((a, b) => b.age - a.age);
     console.log(result);
     return result;
 
     // Annotation:
-    // Write your annotation here as a comment
     /*
   use sort method to sort array in descending order
   parameters a and b represent 2 objects contained in the array
@@ -144,7 +141,6 @@ const modPrompts = {
     return result;
 
     // Annotation:
-    // Write your annotation here as a comment
     /*
   Map over the mods arrays
   Divide students by instructors
@@ -180,7 +176,6 @@ const cakePrompts = {
     return result;
 
     // Annotation:
-    // Write your annotation here as a comment
     /*
   map over cakes arrays
   return new array of objects with two keys,
@@ -213,7 +208,6 @@ const cakePrompts = {
     return result;
 
     // Annotation:
-    // Write your annotation here as a comment
     /*
   filter through the cakes array
   return subset of the original array that only includes cakes in stock
@@ -231,7 +225,6 @@ const cakePrompts = {
     return result;
 
     // Annotation:
-    // Write your annotation here as a comment
     /*
   Reduce inStock cakes into total number of cakes in stock
     */
@@ -249,11 +242,9 @@ const cakePrompts = {
       })
       return acc;
     }, []);
-    console.log('result', result);
     return result;
 
     // Annotation:
-    // Write your annotation here as a comment
     /*
   Reduce elements of the nested arrays
   Combine into a final array without duplicates
@@ -282,11 +273,9 @@ const cakePrompts = {
       });
       return acc;
     }, {});
-
     return result;
 
     // Annotation:
-    // Write your annotation here as a comment
     /*
     Iterate through all of the toppings,
     assign each topping to be a key in a new object
@@ -296,21 +285,11 @@ const cakePrompts = {
   }
 };
 
-
-
-
-
-
 // ---------------------------------------------------------------------------
 // ---------------------------------------------------------------------------
 // ---------------------------------------------------------------------------
 // ---------------------------------------------------------------------------
 // ---------------------------------------------------------------------------
-
-
-
-
-
 
 // DATASET: classrooms from ./datasets/classrooms
 const classPrompts = {
@@ -327,7 +306,6 @@ const classPrompts = {
     return result;
 
     // Annotation:
-    // Write your annotation here as a comment
     // iterate over classrooms filter out only the FE classes
 
   },
@@ -354,7 +332,6 @@ const classPrompts = {
     return result;
 
     // Annotation:
-    // Write your annotation here as a comment
     // iterate over classrooms
     // reduce into object with capacity key and total students value
   },
@@ -362,11 +339,12 @@ const classPrompts = {
   sortByCapacity() {
     // Return the array of classrooms sorted by their capacity (least capacity to greatest)
 
-    const result = 'REPLACE WITH YOUR RESULT HERE';
+    const result = classrooms.sort((a, b) => a.capacity - b.capacity);
+    console.log(result);
     return result;
 
     // Annotation:
-    // Write your annotation here as a comment
+    // sort through capacity and return classrooms sorted from least to greatest
   }
 };
 

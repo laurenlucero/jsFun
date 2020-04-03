@@ -1,3 +1,5 @@
+/* eslint-disable */
+
 const context = {
   exerciseA() {
     const fly = () => {
@@ -30,11 +32,11 @@ const context = {
     }
 
     // What is the value of `this` when we call fn()?
-    const result = "REPLACE WITH YOUR RESULT HERE";
+    const result = "global window object";
     return result;
 
     // Annotation:
-    // Write your annotation here as a comment
+    // When we call fn 'this' is the global window object
   },
 
   exerciseC() {
@@ -49,11 +51,11 @@ const context = {
     el.addEventListener("click", car.getInfo);
 
     // What is the value of `this` when a user clicks on our element and car.getInfo() is triggered?
-    const result = "REPLACE WITH YOUR RESULT HERE";
+    const result = "el";
     return result;
 
     // Annotation:
-    // Write your annotation here as a comment
+    // el refers to the object
   },
 
   exerciseD() {
@@ -63,7 +65,6 @@ const context = {
         const innerFunction = function() {
           console.log(this.breed);
         };
-
         return innerFunction;
       }
     };
@@ -71,11 +72,11 @@ const context = {
     var breed = dog.getBreed();
 
     // What is the value of `this` when we call breed()?
-    const result = "REPLACE WITH YOUR RESULT HERE";
+    const result = "global window object";
     return result;
 
     // Annotation:
-    // Write your annotation here as a comment
+    // by default 'this' refers to the global window object
   },
 
   exerciseE() {

@@ -257,7 +257,7 @@ describe("PROTOTYPES", () => {
             beCapacity: 96
           });
         }),
-        it.only("sortByCapacity", () => {
+        it("sortByCapacity", () => {
           const e = classPrompts.sortByCapacity();
           expect(e).to.deep.equal([
             {
@@ -304,7 +304,7 @@ describe("PROTOTYPES", () => {
         });
     }),
     describe("Book prompts", () => {
-      it("removeViolence", () => {
+      it.only("removeViolence", () => {
         const e = bookPrompts.removeViolence();
         expect(e).to.deep.equal([
           "1984",

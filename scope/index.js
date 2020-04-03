@@ -1,3 +1,5 @@
+/* eslint-disable */
+
 const scope = {
   exerciseA() {
     let personA = 'Paul';
@@ -115,29 +117,37 @@ const scope = {
       if (greeting === 'hi') {
         let greeting = 'hello';
       }
-
       // Log A: greeting
 
       const newGreeting = ()  => {
         greeting = 'welcome';
-
         // Log B: greeting
       };
 
       newGreeting();
-
       // Log C: greeting
     };
 
     greetingGenerator();
-
     // Log D: greeting
 
-    const result = 'REPLACE WITH YOUR RESULT HERE';
+    const result = [{
+      A: "hi"
+    }, {
+      B: "welcome"
+    }, {
+      C: "welcome"
+    }, {
+      D: "howdy"
+    }];
+
     return result;
 
     // Annotation:
-    // Write your annotation here as a comment
+    // A = hi from function scope
+    // B = welcome from function scope but won't log until called
+    // C = welcome from function scope
+    // D = howdy from global scope
   },
 
   exerciseE() {

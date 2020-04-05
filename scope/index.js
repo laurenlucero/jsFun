@@ -162,24 +162,31 @@ const scope = {
         if (name.length > 0) {
           let name = 'Brittany';
         }
-
         // Log A: name
       }
-
       // Log B: name
     }
-
     // Log C: name
 
     sayName();
-
     // Log D: name
 
-    const result = 'REPLACE WITH YOUR RESULT HERE';
+    const result = [{
+      C: "Brittany"
+    }, {
+      A: "Nathaniel"
+    }, {
+      B: "Nathaniel"
+    }, {
+      D: "Brittany"
+    }];
     return result;
 
     // Annotation:
-    // Write your annotation here as a comment
+    // A logs Nathaniel when invoked ?
+    // B logs Nathaniel when invoked ?
+    // C logs Brittany bc global scoped
+    // D logs Brittany bc global scoped
   },
 
   exerciseF() {
@@ -196,25 +203,35 @@ const scope = {
         // Log B: dog
 
         dog = 'Biscuit';
-
         // Log C: dog
-
       }
 
       rollOver();
-
       // Log D: dog
     }
 
     petDog();
-
     // Log E: dog
 
-    const result = 'REPLACE WITH YOUR RESULT HERE';
+    const result = [{
+      A: "Spot"
+    }, {
+      B: "Spot"
+    }, {
+      C: "Biscuit"
+    }, {
+      D: "Biscuit"
+    }, {
+      E: "Biscuit"
+    }];
     return result;
 
     // Annotation:
-    // Write your annotation here as a comment
+    // A logs Spot
+    // B logs Spot ?
+    // C logs Biscuit ?
+    // D logs Biscuit
+    // E logs Biscuit
   },
 
   exerciseG() {
@@ -229,22 +246,30 @@ const scope = {
           // Log A: fruit
           const fruit = 'strawberry';
         }
-
         // Log B: fruit
       }
-
       // Log C: fruit
     }
 
     eatFruit();
-
     // Log D: fruit
 
-    const result = 'REPLACE WITH YOUR RESULT HERE';
+    const result = [{
+      A: "reference error"
+    }, {
+      B: "mango"
+    }, {
+      C: "mango"
+    }, {
+      D: "apple"
+    }];
     return result;
 
     // Annotation:
-    // Write your annotation here as a comment
+    // A logs reference error ?
+    // B logs mango
+    // C logs mango
+    // D logs apple
   },
 
   exerciseH() {

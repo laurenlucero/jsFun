@@ -366,12 +366,12 @@ const bookPrompts = {
     //   'The Curious Incident of the Dog in the Night - Time', 'The Bell Jar',
     //   'Catch-22', 'Treasure Island']
 
-
-    const result = 'REPLACE WITH YOUR RESULT HERE';
-    return result;
+    const result = books.filter(book => book.genre !== 'Horror' && book.genre !== 'True Crime');
+    return result.map(book => book.title);
 
     // Annotation:
-    // Write your annotation here as a comment
+    // filter through array of book objects
+    // return an array of book titles that are not horror or true crime
 
   },
   getNewBooks() {
@@ -382,11 +382,17 @@ const bookPrompts = {
     //  { title: 'Life of Pi', year: 2001 },
     //  { title: 'The Curious Incident of the Dog in the Night-Time', year: 2003 }]
 
-    const result = 'REPLACE WITH YOUR RESULT HERE';
-    return result;
+    const result = books.filter(book => book.published >= 1990 && book.published <= 2009);
+    return result.map(book => {
+      newBooks = {};
+      newBooks.title = book.title,
+      newBooks.year = book.published;
+      return newBooks;
+    })
 
     // Annotation:
-    // Write your annotation here as a comment
+    // filter books that were published in from 1990-2009
+    // return array of objects with title and year published
   }
 
 };

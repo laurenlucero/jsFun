@@ -86,11 +86,11 @@ const context = {
     };
 
     // What is the value of `this` when we call fn()?
-    const result = "REPLACE WITH YOUR RESULT HERE";
+    const result = "global window object";
     return result;
 
     // Annotation:
-    // Write your annotation here as a comment
+    // global window object by default
   },
 
   exerciseF() {
@@ -109,11 +109,11 @@ const context = {
     const storm = new Hero("Ororo", "weather control", true);
 
     // What is the value of `this` when we call storm.identifyHero()?
-    const result = "REPLACE WITH YOUR RESULT HERE";
+    const result = "instance of Hero";
     return result;
 
     // Annotation:
-    // Write your annotation here as a comment
+    // 'this' is bound to 'new' object instance
   },
 
   exerciseG() {
@@ -136,11 +136,11 @@ const context = {
     const monopoly = new Game("Monopoly");
 
     // What is the value of `this` when we call monopoly.restart()?
-    const result = "REPLACE WITH YOUR RESULT HERE";
+    const result = "global window object";
     return result;
 
     // Annotation:
-    // Write your annotation here as a comment
+    // not sure why this isn't the object instance
   },
 
   exerciseH() {

@@ -189,6 +189,7 @@ const context = {
 
     // Annotation:
     // this is implicitly bound to poets
+  },
 
   exerciseJ() {
     const el = $("#btn");

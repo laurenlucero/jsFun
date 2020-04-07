@@ -277,7 +277,6 @@ const scope = {
 
     const fn1 = function() {
       let num = 4;
-
       // Log A: num
 
       if (num < 5) {
@@ -286,12 +285,10 @@ const scope = {
         fn2(num);
 
         const newNum = num;
-
         // Log B: newNum
       }
 
       newNum = num;
-
       // Log C: newNum
     };
 
@@ -299,17 +296,30 @@ const scope = {
       // Log D: num
 
       num = num + 1;
-
       // Log E: num
     };
 
     fn1();
 
-    const result = 'REPLACE WITH YOUR RESULT HERE';
+    const result = [{
+      A: 4
+    }, {
+      D: 9
+    }, {
+      E: 10
+    }, {
+      B: 9
+    }, {
+      C: 4
+    }];
     return result;
 
     // Annotation:
-    // Write your annotation here as a comment
+    // A logs 4
+    // D logs 9
+    // E logs 10
+    // B logs 9
+    // C logs 4
   },
 
   exerciseI() {
@@ -324,7 +334,6 @@ const scope = {
         const hunger = 0;
         // Log B: hunger
       }
-
       // Log C: hunger
     }
 
@@ -336,16 +345,38 @@ const scope = {
     eatSnack();
     // Log E: hunger
 
-    const result = 'REPLACE WITH YOUR RESULT HERE';
+    const result = [{
+      A: 75
+    }, {
+      B: 0
+    }, {
+      C: 75
+    }, {
+      D: 80
+    }, {
+      A: 55
+    }, {
+      B: 0
+    }, {
+      C: 55
+    }, {
+      E: 55
+    }];
     return result;
 
     // Annotation:
-    // Write your annotation here as a comment
+    // A logs 75
+    // B logs 0
+    // C logs 75
+    // D logs 80
+    // A logs 55
+    // B logs 0
+    // C logs 55
+    // E logs 55
   },
 
   exerciseJ() {
     let sandwich = 'ketchup sandwich';
-
     // Log A: sandwich
 
     const addChipotle = () => {
@@ -355,7 +386,6 @@ const scope = {
       if (toppings === 'chipotle sauce') {
         sandwich = 'not a mediocre sandwich';
       }
-
       // Log C: sandwich
     };
 
@@ -377,11 +407,28 @@ const scope = {
     // Log E: sandwich
     // Log F: amandaBynes
 
-    const result = 'REPLACE WITH YOUR RESULT HERE';
+    const result = [{
+      A: "ketchup sandwich"
+    }, {
+      D: "gouda"
+    }, {
+      B: undefined
+    }, {
+      C: "not a mediocre sandwich"
+    }, {
+      E: "not a mediocre sandwich"
+    }, {
+      F: "National Treasure"
+    }];
     return result;
 
     // Annotation:
-    // Write your annotation here as a comment
+    // A logs ketchup sandwich
+    // D logs gouda
+    // B logs undefined
+    // C logs not a mediocre sandwich
+    // E logs not a mediocre sandwich ?
+    // F logs national treasure
   },
 
   exerciseK() {

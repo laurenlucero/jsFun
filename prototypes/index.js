@@ -450,15 +450,13 @@ const weatherPrompts = {
     // }
 
     const result = weather.reduce((acc, weather) => {
-      (weather.humidity > acc) ? weather.humidity : acc;
-      console.log('acc', acc);
-      return acc;
+      return (acc > weather.humidity) ? acc : weather.humidity;
     }, {});
     console.log('result', result);
     return result;
 
     // Annotation:
-    // reduce array into a single object with the highed humidity
+    // reduce array into a single object with the highest humidity
 
   }
 };

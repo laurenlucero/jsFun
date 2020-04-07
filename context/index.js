@@ -156,11 +156,11 @@ const context = {
     obj.method();
 
     // What is the value of `this` when we call obj.arrowFunction()?
-    const result = "REPLACE WITH YOUR RESULT HERE";
+    const result = "obj";
     return result;
 
     // Annotation:
-    // Write your annotation here as a comment
+    // i thought it would be window bc of the arrow function
   },
 
   exerciseI() {
@@ -184,12 +184,11 @@ const context = {
     }, poets);
 
     // What is the value of `this` that gets returned on each iteration of poets.map()?
-    const result = "REPLACE WITH YOUR RESULT HERE";
+    const result = "poets";
     return result;
 
     // Annotation:
-    // Write your annotation here as a comment. Annotation should include explanation regarding the second argument of `poets` that is being passed
-  },
+    // this is implicitly bound to poets
 
   exerciseJ() {
     const el = $("#btn");
@@ -198,11 +197,11 @@ const context = {
     });
 
     // What is the value of `this` when a user clicks on our #btn element and the callback is triggered?
-    const result = "REPLACE WITH YOUR RESULT HERE";
+    const result = "el";
     return result;
 
     // Annotation:
-    // Write your annotation here as a comment.
+    // this is implicitly bound to el
   },
 
   exerciseK() {

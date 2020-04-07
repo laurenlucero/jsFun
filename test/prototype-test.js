@@ -324,7 +324,7 @@ describe("PROTOTYPES", () => {
           "Treasure Island"
         ]);
       }),
-        it.only("getNewBooks", () => {
+        it("getNewBooks", () => {
           const e = bookPrompts.getNewBooks();
           expect(e).to.deep.equal([
             {
@@ -363,7 +363,7 @@ describe("PROTOTYPES", () => {
             "Raleigh, North Carolina is mostly sunny."
           ]);
         }),
-        it("findHighestHumidity", () => {
+        it.only("findHighestHumidity", () => {
           const e = weatherPrompts.findHighestHumidity();
           expect(e).to.deep.equal({
             location: "Portland, Oregon",

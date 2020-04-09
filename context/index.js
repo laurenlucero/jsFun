@@ -214,11 +214,11 @@ const context = {
     };
 
     // What is the value of `this` when we call store.sellMe()?
-    const result = "REPLACE WITH YOUR RESULT HERE";
+    const result = "store";
     return result;
 
     // Annotation:
-    // Write your annotation here as a comment.
+    // implicit binding
   },
 
   exerciseL() {
@@ -234,11 +234,11 @@ const context = {
     };
 
     // What is the value of `this` when we call dog.getBreed()?
-    const result = "REPLACE WITH YOUR RESULT HERE";
+    const result = "dog";
     return result;
 
     // Annotation:
-    // Write your annotation here as a comment
+    // implicit binding
   },
 
   exerciseM() {
@@ -257,11 +257,11 @@ const context = {
     }
 
     // What is the value of `this` when we call makeBirdNoise.call(robert);
-    const result = "REPLACE WITH YOUR RESULT HERE";
+    const result = "robert";
     return result;
 
     // Annotation:
-    // Write your annotation here as a comment
+    // explicit binding with call()
   },
 
   exerciseN() {

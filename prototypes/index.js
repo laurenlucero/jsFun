@@ -590,11 +590,27 @@ const turingPrompts = {
     //  { name: 'Robbie', studentCount: 18 }
     // ]
 
-    const result = 'REPLACE WITH YOUR RESULT HERE';
+    const result = instructors.map(instructor => {
+      let studentsForEachInstructor = {};
+      let students = 0;
+      cohorts.forEach(cohort => {
+        if (cohort.module === instructor.module) {
+          students = cohort.studentCount;
+        }
+      })
+      studentsForEachInstructor.name = instructor.name,
+      studentsForEachInstructor.studentCount = students;
+      return studentsForEachInstructor;
+    });
+    console.log('result', result);
     return result;
 
     // Annotation:
-    // 
+    // declare empty array and students
+    // map through instructors to create a new array of objects
+    // for each cohort, if cohort module matches instructor model,
+    // let students be the student count
+    
   },
 
   studentsPerInstructor() {

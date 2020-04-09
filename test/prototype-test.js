@@ -363,7 +363,7 @@ describe("PROTOTYPES", () => {
             "Raleigh, North Carolina is mostly sunny."
           ]);
         }),
-        it.only("findHighestHumidity", () => {
+        it("findHighestHumidity", () => {
           const e = weatherPrompts.findHighestHumidity();
           expect(e).to.deep.equal({
             location: "Portland, Oregon",
@@ -451,7 +451,7 @@ describe("PROTOTYPES", () => {
         });
     }),
     describe("Turing Prompts", () => {
-      it("studentsForEachInstructor", () => {
+      it.only("studentsForEachInstructor", () => {
         const e = turingPrompts.studentsForEachInstructor();
         expect(e).to.deep.equal([
           {

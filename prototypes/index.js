@@ -340,7 +340,6 @@ const classPrompts = {
     // Return the array of classrooms sorted by their capacity (least capacity to greatest)
 
     const result = classrooms.sort((a, b) => a.capacity - b.capacity);
-    console.log(result);
     return result;
 
     // Annotation:
@@ -597,12 +596,11 @@ const turingPrompts = {
         if (cohort.module === instructor.module) {
           students = cohort.studentCount;
         }
-      })
+      });
       studentsForEachInstructor.name = instructor.name,
       studentsForEachInstructor.studentCount = students;
       return studentsForEachInstructor;
     });
-    console.log('result', result);
     return result;
 
     // Annotation:
@@ -610,7 +608,7 @@ const turingPrompts = {
     // map through instructors to create a new array of objects
     // for each cohort, if cohort module matches instructor model,
     // let students be the student count
-    
+
   },
 
   studentsPerInstructor() {
@@ -620,11 +618,26 @@ const turingPrompts = {
     // cohort1804: 10.5
     // }
 
-    const result = 'REPLACE WITH YOUR RESULT HERE';
+    const result = cohorts.reduce((acc, cohort) => {
+      let instructorCount = 0;
+      instructors.forEach(instructor => {
+        if (cohort.module === instructor.module) {
+          instructorCount++
+        }
+        acc[`cohort${cohort.cohort}`] = cohort.studentCount / instructorCount
+      })
+      cohort.studentCount
+      return acc;
+    }, {
+      cohort1806: 0,
+      cohort1804: 0,
+      cohort1803: 0,
+      cohort1801: 0
+    });
     return result;
 
     // Annotation:
-    // Write your annotation here as a comment
+    // reduce both arrays of objects into single object with cohort keys and students per instructor value
   },
 
   modulesPerTeacher() {

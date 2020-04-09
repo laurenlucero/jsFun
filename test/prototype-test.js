@@ -451,7 +451,7 @@ describe("PROTOTYPES", () => {
         });
     }),
     describe("Turing Prompts", () => {
-      it.only("studentsForEachInstructor", () => {
+      it("studentsForEachInstructor", () => {
         const e = turingPrompts.studentsForEachInstructor();
         expect(e).to.deep.equal([
           {
@@ -492,7 +492,7 @@ describe("PROTOTYPES", () => {
           }
         ]);
       }),
-        it("studentsPerInstructor", () => {
+        it.only("studentsPerInstructor", () => {
           const e = turingPrompts.studentsPerInstructor();
           expect(e).to.deep.equal({
             cohort1806: 15,

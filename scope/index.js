@@ -445,11 +445,17 @@ const scope = {
 
     // Log B: num
 
-    const result = 'REPLACE WITH YOUR RESULT HERE';
+    const result = [{
+      A: 7
+    }, {
+      B: 7
+    }];
     return result;
 
     // Annotation:
-    // Write your annotation here as a comment
+    // A logs 7
+    // B logs 7
+
   },
 
   exerciseL() {
@@ -464,24 +470,29 @@ const scope = {
         if (grade === 95) {
           let grade = 97;
         }
-
         // Log A: grade
       }
 
       addPoints();
-
       // Log B: grade
     }
 
     losePoints();
-
     // Log C: grade
 
-    const result = 'REPLACE WITH YOUR RESULT HERE';
+    const result = [{
+      A: 95
+    }, {
+      B: 90
+    }, {
+      C: 90
+    }];
     return result;
 
     // Annotation:
-    // Write your annotation here as a comment
+    // A logs 95
+    // B logs 90 ?
+    // C logs 90 ?
   },
 
   exerciseM() {
@@ -500,14 +511,24 @@ const scope = {
 
     first();
     second();
-
     // Log D: num
 
-    const result = 'REPLACE WITH YOUR RESULT HERE';
+    const result = [{
+      A: 5
+    }, {
+      B: 6
+    }, {
+      C: "reference error"
+    }, {
+      D: 6
+    }];
     return result;
 
     // Annotation:
-    // Write your annotation here as a comment
+    // A logs 5
+    // B logs 6
+    // C logs reference error ?
+    // D logs 6
   },
 
   exerciseN() {

@@ -535,7 +535,6 @@ const scope = {
     var instructor = 'Pam';
 
     function changeInstructor() {
-
       // Log A: instructor
 
       if (instructor === 'Brittany') {
@@ -543,7 +542,6 @@ const scope = {
       } else {
         let instructor = 'Brittany';
       }
-
       // Log B: instructor
 
       function rename() {
@@ -552,22 +550,36 @@ const scope = {
       }
 
       rename();
-
       // Log D: instructor
 
     }
-
     // Log E: instructor
 
     changeInstructor();
-
     // Log F: instructor
 
-    const result = 'REPLACE WITH YOUR RESULT HERE';
+    const result = [{
+      E: "Pam"
+    }, {
+      A: "Pam"
+    }, {
+      B: "Pam"
+    }, {
+      C: "Louisa"
+    }, {
+      D: "Louisa"
+    }, {
+      F: "Louisa"
+    }];
     return result;
 
     // Annotation:
-    // Write your annotation here as a comment
+    // A logs Pam
+    // B logs Pam
+    // C logs Pam ?
+    // D logs Louisa
+    // E logs Louisa
+    // F logs Louisa
   },
 
   exerciseO() {
@@ -577,16 +589,23 @@ const scope = {
       // Log A: shoe
       var shoe = 'boot';
     }
-
     // Log B: shoe
     putOnShoe();
     // Log C: shoe
 
-    const result = 'REPLACE WITH YOUR RESULT HERE';
+    const result = [{
+      B: "flipflop"
+    }, {
+      A: undefined
+    }, {
+      C: "flipflop"
+    }];
     return result;
 
     // Annotation:
-    // Write your annotation here as a comment
+    // B logs flipflop
+    // A logs undefined
+    // C logs flipflop ?
   },
 
   exerciseP() {
@@ -600,19 +619,23 @@ const scope = {
       if (typeof lunch === 'undefined') {
         lunch = 'soup';
       }
-
       // Log B: lunch
     }
 
     orderLunch();
-
     // Log C: lunch
 
-    const result = 'REPLACE WITH YOUR RESULT HERE';
+    const result = [{
+      B: "soup"
+    }, {
+      C: "soup"
+    }];
     return result;
 
     // Annotation:
-    // Write your annotation here as a comment
+    // A logs undefined ?
+    // B logs soup
+    // C logs soup
   },
 
   exerciseQ(){
@@ -645,11 +668,25 @@ const scope = {
 
     myCrazyKidAntics(myKid);
 
-    const result = 'REPLACE WITH YOUR RESULT HERE';
+    const result = [{
+      A: "Pandora"
+    }, {
+      B: ["Antigone", "Pandora"]
+    }, {
+      C: "Mandy"
+    }, {
+      D: "Antigone"
+    }, {
+      E: "Pandora"
+    }];
     return result;
 
     // Annotation:
-    // Write your annotation here as a comment
+    // A logs Pandora
+    // B logs ['Antigone', 'Pandora']
+    // C logs Mandy
+    // D logs Antigone
+    // E logs Pandora
   },
 
   exerciseR() {
@@ -672,11 +709,22 @@ const scope = {
     parentFunc();
     // Log D: myName
 
-    const result = 'REPLACE WITH YOUR RESULT HERE';
+    const result = [{
+      A: "Rody"
+    }, {
+      B: "RodyToy"
+    }, {
+      C: "Tesla"
+    }, {
+      D: "RodyToyDaniels"
+    }];
     return result;
 
     // Annotation:
-    // Write your annotation here as a comment
+    // A logs Rody
+    // B logs RodyToy
+    // C logs Tesla
+    // D logs RodyToyDaniels ?
   }
 };
 

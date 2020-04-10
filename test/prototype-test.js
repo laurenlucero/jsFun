@@ -374,14 +374,14 @@ describe("PROTOTYPES", () => {
         });
     }),
     describe("National Park Prompts", () => {
-      it.only("getParkVisitList", () => {
+      it("getParkVisitList", () => {
         const e = nationalParksPrompts.getParkVisitList();
         expect(e).to.deep.equal({
           parksToVisit: ["Yellowstone", "Glacier", "Everglades"],
           parksVisited: ["Rocky Mountain", "Acadia", "Zion"]
         });
       }),
-        it("getParkActivities", () => {
+        it.only("getParkActivities", () => {
           const e = nationalParksPrompts.getParkActivities();
           expect(e).to.deep.equal([
             "hiking",

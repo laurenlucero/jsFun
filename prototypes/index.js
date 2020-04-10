@@ -505,11 +505,18 @@ const nationalParksPrompts = {
     // { Utah: 'Zion' },
     // { Florida: 'Everglades' } ]
 
-    const result = 'REPLACE WITH YOUR RESULT HERE';
+    const result = nationalParks.map(park => {
+      return {
+        [park.location]: park.name,
+      }
+    });
     return result;
 
     // Annotation:
-    // Write your annotation here as a comment
+    // iterate through the national parks
+    // take location and make it a key
+    // take the park name and make it a value based on where it is
+    // return array of objects with state key and park value
   },
 
   getParkActivities() {
@@ -528,11 +535,21 @@ const nationalParksPrompts = {
     //   'backpacking',
     //   'rock climbing' ]
 
-    const result = 'REPLACE WITH YOUR RESULT HERE';
+    const result = nationalParks.reduce((activities, park) => {
+      park.activities.forEach(activity => {
+        if(!activities.includes(activity)) {
+          activities.push(activity)
+        }
+      })
+      return activities
+    }, []);
+    console.log(result);
     return result;
 
     // Annotation:
-    // Write your annotation here as a comment
+    // Iterate through the national parks AND park activities
+    // push activity in to new array if array doesn't contain the activity
+    // return new array
   }
 };
 

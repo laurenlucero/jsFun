@@ -475,11 +475,25 @@ const nationalParksPrompts = {
     //   parksVisited: ["Rocky Mountain", "Acadia", "Zion"]
     //}
 
-    const result = 'REPLACE WITH YOUR RESULT HERE';
+    const result = nationalParks.reduce((parks, park) => {
+      if (park.visited) {
+        parks.parksVisited.push(park.name)
+      } else {
+        parks.parksToVisit.push(park.name)
+      }
+      return parks;
+    }, {
+      parksToVisit: [],
+      parksVisited: []
+    });
     return result;
 
     // Annotation:
-    // Write your annotation here as a comment
+    // iterate through all of the national parks
+    // check if they have been visited or not
+    // if visited is true take the name of the park and push it into visited parks array
+    // if visited is not true push the name of the park into parks to visit array
+    // return object with parks to visit and parks visited keys
   },
 
   getParkInEachState() {

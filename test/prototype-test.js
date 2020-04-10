@@ -381,7 +381,7 @@ describe("PROTOTYPES", () => {
           parksVisited: ["Rocky Mountain", "Acadia", "Zion"]
         });
       }),
-        it.only("getParkActivities", () => {
+        it("getParkActivities", () => {
           const e = nationalParksPrompts.getParkActivities();
           expect(e).to.deep.equal([
             "hiking",

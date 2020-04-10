@@ -283,11 +283,11 @@ const context = {
     var firstBird = new Bird("Calvin", "budgie");
 
     // What is the value of `this` when we call firstBird.delayNoise();
-    const result = "REPLACE WITH YOUR RESULT HERE";
+    const result = "instance of Bird";
     return result;
 
     // Annotation:
-    // Write your annotation here as a comment
+    // implicit binding
   },
 
   exerciseO() {
@@ -299,11 +299,11 @@ const context = {
     });
 
     // What is the value of `this` when a user clicks on our button element and the callback is triggered?
-    const result = "REPLACE WITH YOUR RESULT HERE";
+    const result = "global window object";
     return result;
 
     // Annotation:
-    // Write your annotation here as a comment
+    // window binding
   },
 
   exerciseP() {
@@ -314,12 +314,12 @@ const context = {
       }
     };
 
-    const result = "REPLACE WITH YOUR RESULT HERE";
+    const result = "global window object";
     return result;
 
     // What is the value of `this` when we call child.scream();
     // Annotation:
-    // Write your annotation here as a comment
+    // I thought this would be child due to implicit binding
   }
 };
 

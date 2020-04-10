@@ -543,7 +543,6 @@ const nationalParksPrompts = {
       })
       return activities
     }, []);
-    console.log(result);
     return result;
 
     // Annotation:

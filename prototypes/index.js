@@ -685,11 +685,30 @@ const turingPrompts = {
     //     Will: [1, 2, 3, 4]
     //   }
 
-    const result = 'REPLACE WITH YOUR RESULT HERE';
+    const result = instructors.reduce((acc, instructor) => {
+      let modules = []
+      instructor.teaches.forEach(skill => {
+        cohorts.forEach(cohort => {
+          if (cohort.curriculum.includes(skill)) {
+            if (!modules.includes(cohort.module)) {
+              modules.push(cohort.module)
+            }
+          }
+        })
+      })
+      acc[instructor.name] = modules
+      return acc;
+    }, {});
     return result;
 
     // Annotation:
-    // Write your annotation here as a comment
+    // return an object
+    // key is instructor name
+    // value is modules they can teach based on teaches skills and mod curriculum
+    // iterate through instructors and teaches array
+    // iterate through cohorts and curriculum array
+    // compare teaches and curriculum
+    // if curriculum matches teaches then assign cohort to instructor
   },
 
   curriculumPerTeacher() {

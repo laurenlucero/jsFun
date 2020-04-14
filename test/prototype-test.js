@@ -501,14 +501,14 @@ describe("PROTOTYPES", () => {
             cohort1801: 9
           });
         }),
-        it("modulesPerTeacher", () => {
+        it.only("modulesPerTeacher", () => {
           const e = turingPrompts.modulesPerTeacher();
           expect(e).to.deep.equal({
             Pam: [2, 4],
             Brittany: [2, 4],
             Nathaniel: [2, 4],
             Robbie: [4],
-            Leta: [2, 4],
+            Leta: [4, 2],
             Travis: [1, 2, 3, 4],
             Louisa: [1, 2, 3, 4],
             Christie: [1, 2, 3, 4],

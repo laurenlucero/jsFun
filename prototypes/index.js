@@ -721,11 +721,28 @@ const turingPrompts = {
     //   recursion: [ 'Pam', 'Leta' ]
     // }
 
-    const result = 'REPLACE WITH YOUR RESULT HERE';
+    const result = cohorts.reduce((acc, cohort) => {
+      cohort.curriculum.forEach(topic => {
+        let instructorsByTopic = []
+        acc[topic] = instructorsByTopic
+        instructors.forEach(instructor => {
+          if (instructor.teaches.includes(topic)) {
+            if (!instructorsByTopic.includes(instructor.name)) {
+            instructorsByTopic.push(instructor.name)
+           }
+          }
+        })
+      })
+      console.log('acc', acc);
+      return acc;
+    }, {});
+    console.log('result', result);
     return result;
 
     // Annotation:
-    // Write your annotation here as a comment
+    // return an object with curriculum topic as key and array of teachers who teach that topic as values
+    // iterate through module curriculum, make each value a key
+    // iterate through teacher skills, assign teacher to curriculum key if skill matches
   }
 };
 

@@ -533,7 +533,7 @@ describe("PROTOTYPES", () => {
         });
     }),
     describe("Boss Prompts", () => {
-      it.only("bossLoyalty", () => {
+      it("bossLoyalty", () => {
         const e = bossPrompts.bossLoyalty();
         expect(e).to.deep.equal([
           {
@@ -552,22 +552,22 @@ describe("PROTOTYPES", () => {
       });
     }),
     describe("Astronomy Prompts", () => {
-      it("starsInConstellations", () => {
+      it.only("starsInConstellations", () => {
         const e = astronomyPrompts.starsInConstellations();
         expect(e).to.deep.equal([
-          {
-            name: "Rigel",
-            visualMagnitude: 0.13,
-            constellation: "Orion",
-            lightYearsFromEarth: 860,
-            color: "blue"
-          },
           {
             name: "Betelgeuse",
             visualMagnitude: 0.5,
             constellation: "Orion",
             lightYearsFromEarth: 640,
             color: "red"
+          },
+          {
+            name: "Rigel",
+            visualMagnitude: 0.13,
+            constellation: "Orion",
+            lightYearsFromEarth: 860,
+            color: "blue"
           }
         ]);
       }),

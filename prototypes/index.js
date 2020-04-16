@@ -820,11 +820,26 @@ const astronomyPrompts = {
     //     color: 'red' }
     // ]
 
-    const result = "REPLACE WITH YOUR RESULT HERE";
+    let constellationNames = Object.keys(constellations);
+
+    const result = constellationNames.reduce((acc, name) => {
+      constellations[name].stars.forEach(star => {
+        stars.forEach(starObject => {
+          if (star === starObject.name) {
+            acc.push(starObject);
+          }
+        });
+      });
+      return acc;
+    }, []);
     return result;
 
     // Annotation:
-    // Write your annotation here as a comment
+    // return an array of star objects that are listed in the constellations object
+    // get keys of constellations, access stars array
+    // iterate through constellations stars array
+    // iterate through stars array of objects
+    // compare star names to stars in constellations, return if included
   },
 
   starsByColor() {

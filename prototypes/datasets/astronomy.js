@@ -31,7 +31,7 @@ const stars = [
   {
     name: 'Alpha Centauri',
     visualMagnitude: -0.27,
-    constellation: '',
+    constellation: 'Centaurus',
     lightYearsFromEarth: 4.4,
     color: 'yellow'
   },

@@ -552,7 +552,7 @@ describe("PROTOTYPES", () => {
       });
     }),
     describe("Astronomy Prompts", () => {
-      it.only("starsInConstellations", () => {
+      it("starsInConstellations", () => {
         const e = astronomyPrompts.starsInConstellations();
         expect(e).to.deep.equal([
           {
@@ -631,7 +631,7 @@ describe("PROTOTYPES", () => {
               {
                 name: "Alpha Centauri",
                 visualMagnitude: -0.27,
-                constellation: "",
+                constellation: "Centaurus",
                 lightYearsFromEarth: 4.4,
                 color: "yellow"
               },
@@ -663,11 +663,12 @@ describe("PROTOTYPES", () => {
             ]
           });
         }),
-        it("constellationsStarsExistIn", () => {
+        it.only("constellationsStarsExistIn", () => {
           const e = astronomyPrompts.constellationsStarsExistIn();
           expect(e).to.deep.equal([
             "Canis Major",
             "Carina",
+            "Centaurus",
             "Boötes",
             "Auriga",
             "Orion",

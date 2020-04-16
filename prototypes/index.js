@@ -741,10 +741,8 @@ const turingPrompts = {
           }
         });
       });
-      console.log("acc", acc);
       return acc;
     }, {});
-    console.log("result", result);
     return result;
 
     // Annotation:
@@ -853,11 +851,23 @@ const astronomyPrompts = {
     //   red: [{obj}]
     // }
 
-    const result = "REPLACE WITH YOUR RESULT HERE";
+    const result = stars.reduce((acc, star) => {
+        if (!acc[star.color]) {
+          acc[star.color] = []
+        }
+        if (star.color === star.color) {
+          acc[star.color].push(star)
+        }
+      console.log('acc', acc);
+      return acc;
+    }, {});
+    console.log('res', result);
     return result;
 
     // Annotation:
-    // Write your annotation here as a comment
+    // return object with star color key and star object values
+    // iterate over star objects, assign colors to object keys
+    // iterate through star objects, if color matches key, push object into array value
   },
 
   constellationsStarsExistIn() {
@@ -874,11 +884,15 @@ const astronomyPrompts = {
     //    "Orion",
     //    "The Little Dipper" ]
 
-    const result = "REPLACE WITH YOUR RESULT HERE";
+    const result = stars.sort((a, b) => a.visualMagnitude - b.visualMagnitude)
+      .map(star => {
+        return star.constellation;
+      })
     return result;
 
     // Annotation:
-    // Write your annotation here as a comment
+    // iterate through stars, sort by visualMagnitude
+    // return an array of the consellation names
   }
 };
 

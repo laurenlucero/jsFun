@@ -663,7 +663,7 @@ describe("PROTOTYPES", () => {
             ]
           });
         }),
-        it.only("constellationsStarsExistIn", () => {
+        it("constellationsStarsExistIn", () => {
           const e = astronomyPrompts.constellationsStarsExistIn();
           expect(e).to.deep.equal([
             "Canis Major",
@@ -681,7 +681,7 @@ describe("PROTOTYPES", () => {
         });
     }),
     describe("Ultima Prompts", () => {
-      it("totalDamage", () => {
+      it.only("totalDamage", () => {
         const e = ultimaPrompts.totalDamage();
         expect(e).to.deep.equal(113);
       }),

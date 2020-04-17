@@ -681,11 +681,11 @@ describe("PROTOTYPES", () => {
         });
     }),
     describe("Ultima Prompts", () => {
-      it.only("totalDamage", () => {
+      it("totalDamage", () => {
         const e = ultimaPrompts.totalDamage();
         expect(e).to.deep.equal(113);
       }),
-        it("charactersByTotal", () => {
+        it.only("charactersByTotal", () => {
           const e = ultimaPrompts.charactersByTotal();
           expect(e).to.deep.equal([
             {

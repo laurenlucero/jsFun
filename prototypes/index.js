@@ -852,16 +852,14 @@ const astronomyPrompts = {
     // }
 
     const result = stars.reduce((acc, star) => {
-        if (!acc[star.color]) {
-          acc[star.color] = []
-        }
-        if (star.color === star.color) {
-          acc[star.color].push(star)
-        }
-      console.log('acc', acc);
+      if (!acc[star.color]) {
+        acc[star.color] = [];
+      }
+      if (star.color === star.color) {
+        acc[star.color].push(star);
+      }
       return acc;
     }, {});
-    console.log('res', result);
     return result;
 
     // Annotation:
@@ -884,10 +882,11 @@ const astronomyPrompts = {
     //    "Orion",
     //    "The Little Dipper" ]
 
-    const result = stars.sort((a, b) => a.visualMagnitude - b.visualMagnitude)
+    const result = stars
+      .sort((a, b) => a.visualMagnitude - b.visualMagnitude)
       .map(star => {
         return star.constellation;
-      })
+      });
     return result;
 
     // Annotation:
@@ -908,14 +907,14 @@ const ultimaPrompts = {
     // Return the sum of the amount of damage for all the weapons that our characters can use
     // Answer => 113
 
-let weaponDetails = Object.entries(weapons)
+    let weaponDetails = Object.entries(weapons);
 
     const result = characters.reduce((sum, character) => {
       weaponDetails.forEach(weapon => {
         if (character.weapons.includes(weapon[0])) {
           sum += weapon[1].damage;
         }
-      })
+      });
       return sum;
     }, 0);
     return result;
@@ -930,11 +929,28 @@ let weaponDetails = Object.entries(weapons)
     // Return the sum damage and total range for each character as an object.
     // ex: [ { Avatar: { damage: 27, range: 24 }, { Iolo: {...}, ...}
 
-    const result = "REPLACE WITH YOUR RESULT HERE";
+    let weaponDetails = Object.entries(weapons);
+
+    const result = characters.reduce((acc, char) => {
+      let totalDamage = {};
+      totalDamage[char.name] = { damage: 0, range: 0 };
+      weaponDetails.forEach(weapon => {
+        if (char.weapons.includes(weapon[0])) {
+          totalDamage[char.name].damage += weapon[1].damage;
+          totalDamage[char.name].range += weapon[1].range;
+        }
+      });
+      acc.push(totalDamage);
+      return acc;
+    }, []);
     return result;
 
     // Annotation:
-    // Write your annotation here as a comment
+    // iterate through characters to access names and weapons
+    // iterate through characters weapon
+    // compare to weapons object entries
+    // find the sum of damage and range for each characters weapons
+    // return an array of objects with character key and weapon detail value
   }
 };
 

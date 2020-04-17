@@ -973,11 +973,16 @@ const dinosaurPrompts = {
     //   'Jurassic World: Fallen Kingdom': 18
     // }
 
-    const result = "REPLACE WITH YOUR RESULT HERE";
+    const result = movies.reduce((acc, movie) => {
+      acc[movie.title] = movie.dinos.length
+      return acc;
+    }, {});
     return result;
 
     // Annotation:
-    // Write your annotation here as a comment
+    // iterate over movies array
+    // set title as key in new object
+    // set length of dinos array as value
   },
 
   averageAgePerMovie() {

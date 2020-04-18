@@ -411,7 +411,7 @@ describe("PROTOTYPES", () => {
         });
     }),
     describe("Brewery Prompts", () => {
-      it("getBeerCount", () => {
+      it.only("getBeerCount", () => {
         const e = breweryPrompts.getBeerCount();
         expect(e).to.deep.equal(40);
       }),
@@ -716,7 +716,7 @@ describe("PROTOTYPES", () => {
         });
     }),
     describe("Dinosaur Prompts", () => {
-      it.only("countAwesomeDinosaurs", () => {
+      it("countAwesomeDinosaurs", () => {
         const e = dinosaurPrompts.countAwesomeDinosaurs();
         expect(e).to.deep.equal({
           "Jurassic Park": 7,

@@ -570,11 +570,15 @@ const breweryPrompts = {
     // Return the total beer count of all beers for every brewery e.g.
     // 40
 
-    const result = "REPLACE WITH YOUR RESULT HERE";
+    const result = breweries.reduce((sum, brew) => {
+      sum += brew.beers.length
+    return sum;
+  }, 0);
     return result;
 
     // Annotation:
-    // Write your annotation here as a comment
+    // iterate through breweres with reduce
+    // sum beers.length
   },
 
   getBreweryBeerCount() {
@@ -999,23 +1003,30 @@ const dinosaurPrompts = {
         'Joe Johnston':
           {
             'Jurassic Park III': 44
-          },
-        'Colin Trevorrow':
-          {
-            'Jurassic World': 56
-           },
-        'J. A. Bayona':
-          {
-            'Jurassic World: Fallen Kingdom': 59
           }
       }
     */
+    let actors = Object.entries(humans);
+    console.log(actors);
 
-    const result = "REPLACE WITH YOUR RESULT HERE";
+
+    const result = movies.reduce((acc, movie) => {
+      acc[movie.director] = {
+
+          [movie.title]: 0
+      }
+
+      console.log('acc', acc);
+      return acc;
+    }, {});
+    console.log('res', result);
     return result;
 
     // Annotation:
-    // Write your annotation here as a comment
+    // return an object where key is movies.director and value is an object w/
+    // movie.title key and average age of cast on the movie.yearReleased
+    // compare movies.cast with humans keys
+    // compare movie.yearReleased with humans year born
   },
 
   uncastActors() {
@@ -1044,11 +1055,26 @@ const dinosaurPrompts = {
       }]
     */
 
-    const result = "REPLACE WITH YOUR RESULT HERE";
+    let actors = Object.entries(humans)
+    console.log('actors', actors);
+
+    const result = actors.reduce((acc, actor) => {
+
+      movies.forEach(movie => {
+
+      })
+
+      console.log('acc', acc);
+      return acc;
+    }, []);
     return result;
 
     // Annotation:
-    // Write your annotation here as a comment
+    // use Object.entries to get actors names
+    // use reduce to iterate through movies
+    // compare actors names to movies cast
+    // if actor was not in jurasic park movie
+    // return actor in an array of objects
   },
 
   actorsAgesInMovies() {

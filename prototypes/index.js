@@ -590,11 +590,21 @@ const breweryPrompts = {
     // ...etc.
     // ]
 
-    const result = "REPLACE WITH YOUR RESULT HERE";
+    const result = breweries.reduce((acc, brew) => {
+      let breweryBeerCount = {}
+      breweryBeerCount.name = brew.name
+      breweryBeerCount.beerCount = brew.beers.length
+      acc.push(breweryBeerCount)
+
+      return acc;
+    }, []);
+    console.log('result', result);
     return result;
 
     // Annotation:
-    // Write your annotation here as a comment
+    // map over array of brewery objects
+    // return an array of objects with brewery name key
+    // value beer count with brewery beer length
   },
 
   findHighestAbvBeer() {

@@ -101,15 +101,21 @@ const clubPrompts = {
     //   ...etc
     // }
 
-    const result = "";
+    const result = clubs.reduce((acc, club) => {
+      club.members.forEach(member => {
+        if (!acc[member]) {
+        acc[member] = []
+      }
+      acc[member].push(club.club)
+    })
+      return acc;
+    }, {});
     return result;
 
     // Annotation:
-    // Write your annotation here as a comment
-    /*
-  Access clubs members and put into an array
-  Remove any duplicates
-    */
+    // iterate over clubs to access members
+    // iterate over members to create keys for new object
+    // if member belongs to club assign club to values array
   }
 };
 
@@ -612,11 +618,18 @@ const breweryPrompts = {
     // e.g.
     // { name: 'Barrel Aged Nature\'s Sweater', type: 'Barley Wine', abv: 10.9, ibu: 40 }
 
-    const result = "REPLACE WITH YOUR RESULT HERE";
-    return result;
+    const result = breweries.reduce((acc, brewery) => {
+      brewery.beers.forEach(beer => {
+        acc.push(beer)
+      })
+      return acc;
+    }, [])
+    return result.sort((a, b) => a.abv - b.abv).pop();
 
     // Annotation:
-    // Write your annotation here as a comment
+    // iterate through breweries array of objects to access beers array of objs
+    // iterate over beers array of objects to check each ABV
+    // return beer object with the greatest ABV
   }
 };
 
